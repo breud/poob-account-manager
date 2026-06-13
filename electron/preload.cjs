@@ -1,0 +1,28 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  loginWithRoblox:    ()            => ipcRenderer.invoke('login-with-roblox'),
+  launchGame:         (opts)        => ipcRenderer.invoke('launch-game', opts),
+  loadAccounts:       ()            => ipcRenderer.invoke('load-accounts'),
+  saveAccounts:       (accounts)    => ipcRenderer.invoke('save-accounts', accounts),
+  getPresence:        (accts)       => ipcRenderer.invoke('get-presence', accts),
+  getLogPath:         ()            => ipcRenderer.invoke('get-log-path'),
+  openLog:            ()            => ipcRenderer.invoke('open-log'),
+  getMultiInstance:   ()            => ipcRenderer.invoke('get-multi-instance'),
+  setMultiInstance:   (enabled)     => ipcRenderer.invoke('set-multi-instance', enabled),
+  getRobloxStats:     (accts)       => ipcRenderer.invoke('get-roblox-stats', accts),
+  getPasswordSettings:()            => ipcRenderer.invoke('get-password-settings'),
+  setPassword:        (password)    => ipcRenderer.invoke('set-password', password),
+  verifyPassword:     (password)    => ipcRenderer.invoke('verify-password', password),
+  setPasswordEnabled: (enabled)     => ipcRenderer.invoke('set-password-enabled', enabled),
+  checkRobloxRunning: ()            => ipcRenderer.invoke('check-roblox-running'),
+  getSystemStats:     ()            => ipcRenderer.invoke('get-system-stats'),
+  getRobloxProcesses: ()            => ipcRenderer.invoke('get-roblox-processes'),
+  getFpsCap:          ()            => ipcRenderer.invoke('get-fps-cap'),
+  setFpsCap:          (fps)         => ipcRenderer.invoke('set-fps-cap', fps),
+  getAccountPid:      (id)          => ipcRenderer.invoke('get-account-pid', id),
+  killRobloxPid:      (pid)         => ipcRenderer.invoke('kill-roblox-pid', pid),
+  killAllRoblox:      ()            => ipcRenderer.invoke('kill-all-roblox'),
+  patchFpsLive:       (fps, prevFps) => ipcRenderer.invoke('patch-fps-live', fps, prevFps),
+  getFpsPaths:        ()            => ipcRenderer.invoke('get-fps-paths'),
+});

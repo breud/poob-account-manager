@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+release/
+
+# Electron builder artifacts / portable binaries (shipped via GitHub Releases, never committed)
+*.exe
+build/*.exe
+win-unpacked/
+builder-debug.yml
+
+# Features excluded from the build — kept locally, not published
+src/pages/_disabled/
+
+# Stray temp files accidentally created from a Windows path
+*AppDataLocalTemp*.cs
+
+# Runtime data — contains .ROBLOSECURITY cookies / password hash.
+# NEVER committed; the app stores these in %APPDATA%\RobloxAccountManager\.
+accounts.json
+settings.json
+ram.log
+*.log
+*.db
+*.sqlite
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
