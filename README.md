@@ -1,6 +1,7 @@
 # Poob Roblox Account Manager
 
-A polished Windows desktop application for managing multiple Roblox accounts. Launch accounts into games simultaneously, monitor their live presence, organize them with tags, and track session history — all from a single sleek interface.
+A polished Windows desktop application for managing multiple Roblox accounts. Launch accounts into games simultaneously, monitor their live presence, organize them with tags, and track session history — all from a single sleek interface. 
+Built Completely With Claude Code.
 
 Built with Electron + React + TypeScript. No installation required — just download and run the portable `.exe`.
 
